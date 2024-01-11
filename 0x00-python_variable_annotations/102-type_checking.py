@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Fix type annotation checks/errors"""
+"""
+Fix type annotation checks/errors
+"""
 from typing import List, Tuple
 
 
