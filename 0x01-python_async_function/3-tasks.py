@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """write a regular function to return a asyncio.Task object"""
 import asyncio
-from typing import Any
+
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-def task_wait_random(max_delay: int) -> Any:
+def task_wait_random(max_delay: int) -> asyncio.Task[None]:
     """
     Returns an asyncio.Task object for the wait_random coroutine
 
