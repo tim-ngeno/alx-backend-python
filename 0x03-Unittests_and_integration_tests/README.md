@@ -5,7 +5,6 @@
 This GitHub repository provides a comprehensive guide on using `unittest`, the built-in unit testing framework in Python, along with `unittest.mock`, a powerful mock object library. It covers various aspects of unit testing, including mocking readonly properties, parameterized tests, and memoization.
 
 ## Table of Contents
-- [Getting Started](#getting-started)
 - [Unit Testing with unittest](#unit-testing-with-unittest)
   - [Basic Test Structure](#basic-test-structure)
   - [Assertions](#assertions)
@@ -17,14 +16,6 @@ This GitHub repository provides a comprehensive guide on using `unittest`, the b
 - [Memoization](#memoization)
   - [Example: Memoization in Unit Tests](#example-memoization-in-unit-tests)
 
-## Getting Started
-
-Clone this repository to get started with unit and integration testing in Python.
-
-```bash
-git clone https://github.com/your_username/your_project.git
-cd your_project
-```
 
 ## Unit Testing with unittest
 
@@ -154,4 +145,4 @@ if __name__ == '__main__':
 
 ## Conclusion
 
-This repository provides a comprehensive guide to unit and integration testing in Python using `unittest` and `unittest.mock`. Feel free to explore the examples and adapt them to your project's needs. Happy testing!
+This repository provides a comprehensive guide to unit and integration testing in Python using `unittest` and `unittest.mock`.
