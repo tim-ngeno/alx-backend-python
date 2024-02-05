@@ -3,7 +3,7 @@
 
 from parameterized import parameterized
 from typing import Any, Dict, Tuple, Type, Union
-from utils import access_nested_map, get_json
+from utils import access_nested_map, get_json, memoize
 from unittest.mock import patch, Mock
 import unittest
 
@@ -65,6 +65,43 @@ class TestGetJson(unittest.TestCase):
 
         mock_get.assert_called_once_with(test_url)
         self.assertEqual(result, test_payload)
+
+
+class TestClass:
+    """
+    A sample test class
+    """
+
+    def a_method(self):
+        return 42
+
+    @memoize
+    def a_property(self):
+        return self.a_method()
+
+
+class TestMemoize(unittest.TestCase):
+    """
+    Unittest class for utils.memoize
+    """
+    @patch.object(TestClass, 'a_method')
+    def test_memoize(self, mock_a_method):
+        """
+        Test that calling a_property twice returns the correct result
+        and a_method is only called once
+        """
+        test_instance = TestClass()
+        mock_a_method.return_value = 42
+
+        # Call a_property twice, assert the correct answer is returned
+        res_1 = test_instance.a_property
+        res_2 = test_instance.a_property
+
+        self.assertEqual(res_1, 42)
+        self.assertEqual(res_2, 42)
+
+        # Assert that a_method is only called once
+        mock_a_method.assert_called_once()
 
 
 if __name__ == "__main__":
