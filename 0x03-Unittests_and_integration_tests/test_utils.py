@@ -73,10 +73,12 @@ class TestClass:
     """
 
     def a_method(self):
+        """ a method that returns an int value """
         return 42
 
     @memoize
     def a_property(self):
+        """ returns a call to a_method """
         return self.a_method()
 
 
