@@ -2,7 +2,7 @@
 """ Client testing module """
 
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from parameterized import parameterized
 from client import GithubOrgClient
 
